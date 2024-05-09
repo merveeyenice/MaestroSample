@@ -1,0 +1,7 @@
+appId: com.google.android.keep
+---
+- launchApp:
+    clearState: true
+- runScript: ../scripts/welcome.js
+- tapOn:
+     text: ${output.welcome.skipWelcomeButton}

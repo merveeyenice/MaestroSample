@@ -1,0 +1,3 @@
+flows:
+ - "welcome/flows/*"
+ - "homepage/flows/*"

@@ -1,0 +1,10 @@
+appId: com.google.android.keep
+---
+- assertVisible:
+      id: "new_list_button"
+- assertVisible:
+      id: "new_drawing_button"
+- assertVisible:
+      id: "new_audio_note_button"
+- assertVisible:
+      id: "new_photo_note"

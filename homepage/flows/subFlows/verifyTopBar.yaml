@@ -1,0 +1,11 @@
+appId: com.google.android.keep
+---
+- assertVisible:
+      id: "og_selected_account_disc_apd"
+- assertVisible:
+      id: "open_search_bar_text_view"
+      text: "Search your notes"
+- assertVisible:
+      id: "menu_switch_to_list_view"
+- assertVisible:
+      id: "og_apd_internal_image_view"   

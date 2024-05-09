@@ -1,0 +1,9 @@
+appId: com.google.android.keep
+---
+- runScript: ../scripts/welcome.js
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    notVisible:
+      id: ${output.welcome.welcomeFragment}
+    timeout: 50000

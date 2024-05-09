@@ -1,0 +1,16 @@
+appId: com.google.android.keep
+---
+- launchApp:
+    clearState: true
+- runScript: ../scripts/welcome.js
+- assertVisible:
+     id: ${output.welcome.welcomeFragment}
+- assertVisible:
+    id: ${output.welcome.welcomeImage}
+- assertVisible:
+    text: ${output.welcome.welcomeText}
+- assertVisible:
+    text: ${output.welcome.welcomeDescription}
+- assertVisible:
+    text: ${output.welcome.skipWelcomeButton}
+    enabled: true

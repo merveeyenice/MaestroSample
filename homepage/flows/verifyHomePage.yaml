@@ -1,0 +1,20 @@
+appId: com.google.android.keep
+---
+- runFlow: ../../welcome/flows/skipWelcomePage.yaml
+- runScript: ../scripts/homepage.js
+- runFlow:
+    when:
+      visible:
+        id: ${output.homepage.toolbar}
+    commands:
+        - runFlow: subFlows/verifyTopBar.yaml
+- assertVisible:
+    id: ${output.homepage.emptyState}
+- runFlow:
+    when:
+      visible:
+        id: ${output.homepage.bottomBar}
+    commands:
+        - runFlow: subFlows/verifyBottomBar.yaml
+- assertVisible:
+    id: ${output.homepage.newNote}
