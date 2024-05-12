@@ -1,0 +1,11 @@
+appId: com.google.android.keep
+---
+- runFlow: ../../welcome/flows/skipWelcomePage.yaml
+- runScript: ../../homepage/scripts/homepage.js
+- runScript: ../scripts/createnote.js
+- tapOn:
+    id: ${output.homepage.newNote}
+- assertVisible:
+    id:  ${output.createnote.noteTitle}
+- assertVisible:
+    id:  ${output.createnote.noteText}
