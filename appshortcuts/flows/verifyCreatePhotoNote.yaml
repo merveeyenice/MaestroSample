@@ -1,0 +1,11 @@
+appId: com.google.android.keep
+---
+- clearState
+- runScript: ../../createnote/scripts/createnote.js
+- swipe:
+    direction: UP
+- longPressOn: Keep Notes
+- tapOn: "New photo note"
+- assertVisible:
+    id: "com.android.camera2:id/progress_overlay"
+- stopApp

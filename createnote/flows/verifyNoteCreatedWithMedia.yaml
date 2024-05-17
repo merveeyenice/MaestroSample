@@ -1,0 +1,23 @@
+appId: com.google.android.keep
+---
+- runFlow: ../../welcome/flows/skipWelcomePage.yaml
+- runScript: ../../homepage/scripts/homepage.js
+- runScript: ../scripts/createnote.js
+- tapOn:
+    id: ${output.homepage.newNote}
+- assertVisible:
+    id:  ${output.createnote.noteTitle}
+- assertVisible:
+    id:  ${output.createnote.noteText}
+- runFlow: subFlows/addMediaToNoteFlow.yaml
+- tapOn:
+    id: ${output.createnote.noteTitle}
+- inputText: "Image added test title"
+- hideKeyboard
+- tapOn:
+    id: ${output.createnote.noteText}
+- inputText: "Image added test note"
+- hideKeyboard
+- tapOn: "Navigate up"
+- assertVisible:
+    id: ${output.createnote.browseImgViewSwitcher}
