@@ -1,0 +1,16 @@
+appId: com.google.android.keep
+---
+- tapOn:
+    id:  ${output.createnote.bsAddButton}
+- addMedia:
+    - "test.png"
+- tapOn:
+    text: "Add image"
+- tapOn:
+    text: "Photos"
+- tapOn:
+    text: "Pictures"
+- tapOn:
+    id: "com.google.android.apps.photos:id/end_checkmark"
+- tapOn:
+    text: "Done" 

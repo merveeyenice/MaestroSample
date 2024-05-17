@@ -1,0 +1,14 @@
+appId: com.google.android.keep
+---
+- runScript: ../../createnote/scripts/createnote.js
+- clearState
+- swipe:
+    direction: UP
+- longPressOn: Keep Notes
+- tapOn: "New text note"
+- assertVisible:
+    id:  ${output.createnote.noteTitle}
+- assertVisible:
+    id:  ${output.createnote.noteText}
+- pressKey: back
+- stopApp

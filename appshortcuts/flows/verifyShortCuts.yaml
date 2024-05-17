@@ -1,0 +1,13 @@
+appId: com.google.android.keep
+---
+- runScript: ../scripts/shortcuts.js
+- clearState
+- swipe:
+    direction: UP
+- longPressOn: Keep Notes
+- assertVisible: ${output.shortcuts.newTextNote}
+- assertVisible: ${output.shortcuts.newList}
+- assertVisible: ${output.shortcuts.newPhotoNote}
+- assertVisible: ${output.shortcuts.newAudioNote}
+- pressKey: back
+- stopApp

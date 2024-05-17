@@ -1,0 +1,15 @@
+appId: com.google.android.keep
+---
+- runScript: ../../createlist/scripts/createlist.js
+- clearState
+- swipe:
+    direction: UP
+- longPressOn: Keep Notes
+- tapOn: "New list"
+- assertVisible:
+    id: ${output.createlist.listTitle}
+- assertVisible:
+    id:  ${output.createlist.checkboxItem}
+- assertVisible:
+    id:  ${output.createlist.listFooterContainer}
+- stopApp

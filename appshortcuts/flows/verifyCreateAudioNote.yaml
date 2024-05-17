@@ -1,0 +1,12 @@
+appId: com.google.android.keep
+---
+- clearState
+- swipe:
+    direction: UP
+- longPressOn: Keep Notes
+- tapOn: "New audio note"
+- assertVisible:
+    id: "com.android.permissioncontroller:id/content_container"
+- tapOn: "Deny"
+- pressKey: back
+- stopApp

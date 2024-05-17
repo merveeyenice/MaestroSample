@@ -1,3 +1,5 @@
 flows:
  - "welcome/flows/*"
  - "homepage/flows/*"
+ - "createnote/flows/*"
+ - "appshortcuts/flows/*"
