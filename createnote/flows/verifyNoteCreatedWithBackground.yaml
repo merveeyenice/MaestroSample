@@ -1,0 +1,25 @@
+appId: com.google.android.keep
+---
+- runFlow: ../../welcome/flows/skipWelcomePage.yaml
+- runScript: ../../homepage/scripts/homepage.js
+- runScript: ../scripts/createnote.js
+- tapOn:
+    id: ${output.homepage.newNote}
+- hideKeyboard
+- tapOn: "Theme"
+- tapOn: "Theme Food"
+- pressKey: back
+- tapOn:
+    id: ${output.createnote.noteTitle}
+- inputText: "Note test title with background"
+- hideKeyboard
+- tapOn:
+    id: ${output.createnote.noteText}
+- inputText: "Note test with background"
+- hideKeyboard
+- tapOn: "Navigate up"
+- assertVisible:
+    id: com.google.android.keep:id/index_note_title
+    index: 0
+    text: "Note test title with background"
+- stopApp

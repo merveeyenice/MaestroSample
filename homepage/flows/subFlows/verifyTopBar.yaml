@@ -1,7 +1,8 @@
 appId: com.google.android.keep
 ---
+- runScript: ../../scripts/homepage.js
 - assertVisible:
-      id: "og_selected_account_disc_apd"
+      id: ${output.homepage.sideBar}
 - assertVisible:
       id: "open_search_bar_text_view"
       text: "Search your notes"
