@@ -1,0 +1,27 @@
+appId: com.google.android.keep
+---
+- runFlow: ../../welcome/flows/skipWelcomePage.yaml
+- runScript: ../../homepage/scripts/homepage.js
+- runScript: ../scripts/createnote.js
+- tapOn:
+    id: ${output.homepage.newNote}
+- hideKeyboard
+- tapOn: "Theme"
+- tapOn:
+    id: "com.google.android.keep:id/color_picker_swatch"
+    index: 1
+- pressKey: back
+- tapOn:
+    id: ${output.createnote.noteTitle}
+- inputText: "Colored test title"
+- hideKeyboard
+- tapOn:
+    id: ${output.createnote.noteText}
+- inputText: "Colored test note"
+- hideKeyboard
+- tapOn: "Navigate up"
+- assertVisible:
+    id: com.google.android.keep:id/index_note_title
+    index: 0
+    text: Colored test title
+- stopApp
